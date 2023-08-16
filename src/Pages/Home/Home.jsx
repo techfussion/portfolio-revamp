@@ -4,7 +4,6 @@ import HashLoader from "react-spinners/HashLoader";
 import PreLoader from "../../components/PreLoader";
 
 const Home = () => {
-  const preloader = null;
   return (
     <>
       <PreLoader />
