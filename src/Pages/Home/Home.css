@@ -1,0 +1,35 @@
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1f1e1e;
+  /* color: #dbd8d6; */
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-family: "Bai Jamjuree";
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  font-family: "Badoni Moda";
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.absolute {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  z-index: 1;
+}
