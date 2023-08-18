@@ -1,0 +1,10 @@
+.project-section {
+  padding: 0 6rem;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.card-group {
+  max-width: 45%;
+}

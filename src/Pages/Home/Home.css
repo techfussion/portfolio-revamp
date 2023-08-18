@@ -1,9 +1,5 @@
-.loader-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #1f1e1e;
+.home-landing-viewport {
+  background-color: rgb(183, 187, 187);
   width: 100vw;
   height: 100vh;
 }

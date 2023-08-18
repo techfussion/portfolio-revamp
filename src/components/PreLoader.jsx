@@ -1,5 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import HashLoader from "react-spinners/HashLoader";
+import { styled } from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1f1e1e;
+  width: 100vw;
+  height: 100vh;
+`;
 
 const PreLoader = () => {
   const [preloader, setPreloader] = useState(false);
@@ -39,7 +50,7 @@ const PreLoader = () => {
   return (
     <>
       {preloader ? (
-        <div className="loader-wrapper">
+        <Wrapper>
           <HashLoader
             color={currentpreloaderColor}
             loading={preloader}
@@ -47,7 +58,7 @@ const PreLoader = () => {
             aria-label="Loading Spinner"
             data-testid="preloader"
           />
-        </div>
+        </Wrapper>
       ) : (
         <></>
       )}
