@@ -3,7 +3,8 @@ import { styled } from "styled-components";
 
 const StyledButton = styled.button`
   background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
-  color: ${(props) => (props.bgColor ? "#fff" : "#000")}
+  ${"" /* color: ${(props) => (props.bgColor ? "#fff" : "#000")} */}
+  color: "white";
   padding: 1rem 2rem;
   border-radius: 1.5rem;
 `;

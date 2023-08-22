@@ -6,7 +6,7 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 3rem;
+  padding: 1.2rem 3rem 0 3rem;
 
   > ul {
     display: flex;
@@ -18,21 +18,29 @@ const StyledNav = styled.nav`
   }
 `;
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <StyledNav>
       <p>
-        <Link to={"/"}>@Venerable</Link>
+        <Link style={{ color: props.color }} to={"/"}>
+          @Venerable
+        </Link>
       </p>
       <ul>
         <li>
-          <Link to={"/work"}>Work</Link>
+          <Link style={{ color: props.color }} to={"/work"}>
+            Work
+          </Link>
         </li>
         <li>
-          <Link to={"/about"}>About</Link>
+          <Link style={{ color: props.color }} to={"/about"}>
+            About
+          </Link>
         </li>
         <li>
-          <Link to={"/contact"}>Contact</Link>
+          <Link style={{ color: props.color }} to={"/contact"}>
+            Contact
+          </Link>
         </li>
       </ul>
     </StyledNav>

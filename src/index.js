@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -4,11 +4,12 @@ import Card from "../../components/Card";
 import "./Work.css";
 import CardTitle from "../../components/CardTitle";
 import ActionButton from "../../components/ActionButton";
+import Footer from "../../components/Footer";
 
 const Work = () => {
   return (
     <>
-      <NavBar />
+      <NavBar color="#000" />
       <section className="project-section">
         <div className="card-group">
           <Card imgName="home-item-1.jpg" bgColor="#373737" />
@@ -32,6 +33,7 @@ const Work = () => {
         </div>
       </section>
       <ActionButton bgColor="black" value="View More" />
+      <Footer />
     </>
   );
 };
