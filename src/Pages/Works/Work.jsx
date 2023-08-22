@@ -5,11 +5,14 @@ import "./Work.css";
 import CardTitle from "../../components/CardTitle";
 import ActionButton from "../../components/ActionButton";
 import Footer from "../../components/Footer";
+import SideNav from "../../components/SideNav";
 
 const Work = () => {
   return (
     <>
+      <SideNav />
       <NavBar color="#000" />
+
       <section className="project-section">
         <div className="card-group">
           <Card imgName="home-item-1.jpg" bgColor="#373737" />
@@ -31,8 +34,12 @@ const Work = () => {
           <Card imgName="home-item-8.jpg" bgColor="grey" />
           <CardTitle name="Emble Studio" workType="Desing & Development" />
         </div>
+        <div className="card-group">
+          <Card imgName="home-item-3.jpg" bgColor="grey" />
+          <CardTitle name="Atypikal" workType="Design" />
+        </div>
+        <ActionButton bgColor="grey" color="white" value="View More" />
       </section>
-      <ActionButton bgColor="black" value="View More" />
       <Footer />
     </>
   );

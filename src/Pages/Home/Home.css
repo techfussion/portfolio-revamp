@@ -11,11 +11,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   font-family: "Barlow Condensed", sans-serif;
 }
 
-.intro {
+.wrapper .intro {
   max-width: 30%;
 }
 

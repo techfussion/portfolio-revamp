@@ -3,10 +3,13 @@ import { styled } from "styled-components";
 
 const StyledButton = styled.button`
   background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
-  ${"" /* color: ${(props) => (props.bgColor ? "#fff" : "#000")} */}
-  color: "white";
-  padding: 1rem 2rem;
-  border-radius: 1.5rem;
+  color: ${(props) => (props.color ? props.color : "#fff")};
+  border: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: 2rem;
+  margin: 0 auto 5rem auto;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
 `;
 
 const ActionButton = (props) => {
@@ -15,6 +18,7 @@ const ActionButton = (props) => {
       type={props.type ? props.type : "button"}
       name={props.name ? props.name : ""}
       bgColor={props.bgColor}
+      color={props.color}
     >
       {props.value}
     </StyledButton>

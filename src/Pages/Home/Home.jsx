@@ -8,6 +8,7 @@ import {
 } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
 import Footer from "../../components/Footer";
+import SideNav from "../../components/SideNav";
 // import roleData from "../../data/role.js";
 
 const Home = () => {
@@ -18,11 +19,12 @@ const Home = () => {
 
   return (
     <>
+      <SideNav />
       <header className="home-landing-viewport">
         <NavBar color="#fff" />
         <div className="wrapper">
           <div className="intro-prev">
-            <VscChevronLeft />
+            <VscChevronLeft size={24} />
           </div>
           <div className="intro">
             <h1 className="name">Raji Abdulmumin</h1>
@@ -44,7 +46,7 @@ const Home = () => {
           </div>
           <img src={require("../../assets/img/home-anim-1.gif")} alt="" />
           <div className="intro-next">
-            <VscChevronRight />
+            <VscChevronRight size={24} />
           </div>
         </div>
       </header>
