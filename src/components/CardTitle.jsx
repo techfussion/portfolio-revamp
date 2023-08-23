@@ -1,4 +1,5 @@
 import React from "react";
+import { VscGithubAlt, VscEye } from "react-icons/vsc";
 import { styled } from "styled-components";
 
 const StyledDiv = styled.div`
@@ -6,6 +7,15 @@ const StyledDiv = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 7rem;
+
+    > ul {
+      padding-left: 0;
+
+      > li {
+        display: inline;
+        padding-left: 0.6rem;
+      }
+    }
   }
 `;
 
@@ -16,7 +26,14 @@ const CardTitle = (props) => {
       <hr />
       <div className="work-type-group">
         <p>{props.workType}</p>
-        <p>test</p>
+        <ul>
+          <li>
+            <VscGithubAlt />
+          </li>
+          <li>
+            <VscEye />
+          </li>
+        </ul>
       </div>
     </StyledDiv>
   );

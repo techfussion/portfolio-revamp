@@ -11,8 +11,17 @@ const Work = () => {
   return (
     <>
       <SideNav />
-      <NavBar color="#000" />
-
+      <NavBar />
+      <section className="work-intro">
+        <h1>Designing Experiences, Crafting Solutions, Bridging Frontiers</h1>
+        <button>Hire</button>
+      </section>
+      <div className="toggle-work-type">
+        <p>All</p>
+        <p>Design</p>
+        <p>Development</p>
+        <p>Scripts</p>
+      </div>
       <section className="project-section">
         <div className="card-group">
           <Card imgName="home-item-1.jpg" bgColor="#373737" />

@@ -5,6 +5,32 @@
   flex-flow: wrap;
 }
 
+.work-intro {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-intro h1 {
+  max-width: 55%;
+  font-size: 5rem;
+  letter-spacing: 6px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.toggle-work-type {
+  display: flex;
+  flex-direction: row;
+  margin: 4rem 0 2rem 6rem;
+}
+
+.toggle-work-type p {
+  padding-left: 0.4rem;
+}
+
 .card-group {
   max-width: 45%;
 }

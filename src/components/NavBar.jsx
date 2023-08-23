@@ -7,6 +7,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   padding: 1.2rem 3rem 0 3rem;
+  background-color: ${(props) => (props.bgColor ? props.bgColor : "fff")};
 
   > ul {
     display: flex;
@@ -20,7 +21,7 @@ const StyledNav = styled.nav`
 
 const NavBar = (props) => {
   return (
-    <StyledNav>
+    <StyledNav bgColor={props.bgColor}>
       <p>
         <Link style={{ color: props.color }} to={"/"}>
           @Venerable
