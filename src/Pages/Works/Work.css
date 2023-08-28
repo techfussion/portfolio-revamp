@@ -12,23 +12,45 @@
   align-items: center;
 }
 
+.get-in-touch {
+  position: absolute;
+  /* padding: 3rem 1rem; */
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-family: monospace, sans-serif;
+  font-size: 1.1rem;
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+  right: 7rem;
+  bottom: 10rem;
+}
+
 .work-intro h1 {
-  max-width: 55%;
-  font-size: 5rem;
+  max-width: 60%;
+  font-size: 6.5vw;
   letter-spacing: 6px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.65);
 }
+.work-intro h1 span {
+  display: inline-block;
+  padding-right: 25px;
+}
 
 .toggle-work-type {
   display: flex;
   flex-direction: row;
-  margin: 4rem 0 2rem 6rem;
+  margin: 3rem 0 1rem 6rem;
+}
+
+.toggle-work-type p:hover {
+  cursor: pointer;
+  color: #ff1414ea;
 }
 
 .toggle-work-type p {
-  padding-left: 0.4rem;
+  padding-right: 0.9rem;
 }
 
 .card-group {

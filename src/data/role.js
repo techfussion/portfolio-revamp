@@ -1,6 +1,6 @@
 const roleData = [
   {
-    role: "SoftWare Engineer",
+    role: "Software Engineer",
     toastMessage: "Building amazing products for companies, startups and more",
     techStack: [
       "Html",
@@ -18,12 +18,12 @@ const roleData = [
     ],
   },
   {
-    role: "Front End",
+    role: "Frontend Developer",
     toastMessage: "Building amazing products for companies, startups and more",
     techStack: ["Html", "Css", "JS", "React", "MUI", "Api"],
   },
   {
-    role: "Back End",
+    role: "Backend Developer",
     toastMessage: "Building amazing products for companies, startups and more",
     techStack: [
       "JS",

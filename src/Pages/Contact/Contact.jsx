@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "../../components/NavBar";
-import BaseFooter from "../../components/BaseFooter";
-import SideNav from "../../components/SideNav";
+import NavBar from "../../layout/NavBar";
+import BaseFooter from "../../layout/BaseFooter";
+import SideNav from "../../layout/SideNav";
 
 const Contact = () => {
   return (

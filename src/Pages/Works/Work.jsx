@@ -1,53 +1,77 @@
-import React from "react";
-import NavBar from "../../components/NavBar";
+import { React, useEffect, useRef } from "react";
+import NavBar from "../../layout/NavBar";
 import Card from "../../components/Card";
 import "./Work.css";
 import CardTitle from "../../components/CardTitle";
 import ActionButton from "../../components/ActionButton";
-import Footer from "../../components/Footer";
-import SideNav from "../../components/SideNav";
+import Footer from "../../layout/Footer";
+import SideNav from "../../layout/SideNav";
+import workList from "../../data/workList";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const Work = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const animationControls = useAnimation();
+  const intro = "Designing Experinces, Crafting Solution, Bridging Frontiers";
+
+  useEffect(() => {
+    if (isInView) {
+      animationControls.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+  }, [isInView]);
+
   return (
     <>
       <SideNav />
       <NavBar />
-      <section className="work-intro">
-        <h1>Designing Experiences, Crafting Solutions, Bridging Frontiers</h1>
-        <button>Hire</button>
+      <section className="work-intro" ref={ref}>
+        <h1>
+          {intro.split(" ").map((word, index) => {
+            return (
+              <motion.span
+                initial={{ opacity: 0, y: 100 }}
+                animate={animationControls}
+                transition={{ duration: 0.5, delay: 0.25 * index }}
+                key={index}
+              >
+                {word}
+              </motion.span>
+            );
+          })}
+        </h1>
       </section>
-      <div className="toggle-work-type">
+      <motion.div
+        ref={ref}
+        className="toggle-work-type"
+        variants={{
+          hidden: { opacity: 0, y: 100 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={animationControls}
+        transition={{ duration: 0.5, delay: 1.8 }}
+      >
         <p>All</p>
         <p>Design</p>
         <p>Development</p>
         <p>Scripts</p>
-      </div>
+      </motion.div>
       <section className="project-section">
-        <div className="card-group">
-          <Card imgName="home-item-1.jpg" bgColor="#373737" />
-          <CardTitle name="MicDrop Agency" workType="Design & Development" />
-        </div>
-        <div className="card-group">
-          <Card imgName="home-item-3.jpg" bgColor="grey" />
-          <CardTitle name="Atypikal" workType="Design" />
-        </div>
-        <div className="card-group">
-          <Card imgName="home-item-3.jpg" bgColor="grey" />
-          <CardTitle name="Atypikal" workType="Design" />
-        </div>
-        <div className="card-group">
-          <Card imgName="home-item-6.jpg" bgColor="grey" />
-          <CardTitle name="Tapsody" workType="App & Web" />
-        </div>
-        <div className="card-group">
-          <Card imgName="home-item-8.jpg" bgColor="grey" />
-          <CardTitle name="Emble Studio" workType="Desing & Development" />
-        </div>
-        <div className="card-group">
-          <Card imgName="home-item-3.jpg" bgColor="grey" />
-          <CardTitle name="Atypikal" workType="Design" />
-        </div>
-        <ActionButton bgColor="grey" color="white" value="View More" />
+        {workList.map((work) => (
+          <div className="card-group" key={work.id}>
+            <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
+            <CardTitle name={work.title} workType={work.workType} />
+          </div>
+        ))}
+        <ActionButton
+          bgcolor="rgb(69,92,233)"
+          color="white"
+          value="View More"
+        />
       </section>
       <Footer />
     </>

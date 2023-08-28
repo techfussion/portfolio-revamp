@@ -1,21 +1,32 @@
-import React, { /*useEffect, useState,*/ useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Home.css";
-import NavBar from "../../components/NavBar";
+import NavBar from "../../layout/NavBar";
 import {
   VscGithubInverted,
   VscChevronLeft,
   VscChevronRight,
 } from "react-icons/vsc";
 import { IoLogoLinkedin } from "react-icons/io5";
-import Footer from "../../components/Footer";
-import SideNav from "../../components/SideNav";
-// import roleData from "../../data/role.js";
+import Footer from "../../layout/Footer";
+import SideNav from "../../layout/SideNav";
+import roleData from "../../data/role.js";
 
 const Home = () => {
-  // const [role, setRole] = useState("");
+  // const [roleState, setRoleState] = useState("");
   // const [toastMessage, setToastMessage] = useState("");
 
-  // const idx = useRef(0);
+  // let idx = useRef(1);
+
+  // setInterval(() => {
+  //   setRoleState(roleData[idx.current].role);
+  //   setToastMessage(roleData[idx.current].toastMessage);
+  //   idx.current = idx.current === roleData.length ? 0 : idx.current + 1;
+  // }, 7000);
+
+  // useEffect(() => {
+  //   setRoleState(roleData[0].role);
+  //   setToastMessage(roleData[0].toastMessage);
+  // }, []);
 
   return (
     <>
@@ -28,6 +39,8 @@ const Home = () => {
           </div>
           <div className="intro">
             <h1 className="name">Raji Abdulmumin</h1>
+            {/* <p className="role">{roleState}</p>
+            <p className="toast-message">{toastMessage}</p> */}
             <p className="role">Software Engineer</p>
             <p className="toast-message">
               Building amazing products for companies, startups and more.

@@ -6,7 +6,7 @@ const StyledButton = styled.button`
   color: ${(props) => (props.color ? props.color : "#fff")};
   border: 1px solid ${(props) => props.color};
   padding: 1.5rem 2.5rem;
-  border-radius: 2rem;
+  border-radius: ${(props) => (props.rad ? props.rad : "2rem")};
   margin: 0 auto 5rem auto;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1rem;
@@ -19,6 +19,7 @@ const ActionButton = (props) => {
       name={props.name ? props.name : ""}
       bgColor={props.bgColor}
       color={props.color}
+      rad={props.rad}
     >
       {props.value}
     </StyledButton>
