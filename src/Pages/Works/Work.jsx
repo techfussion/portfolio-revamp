@@ -1,15 +1,24 @@
-import { React, useEffect, useRef } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import NavBar from "../../layout/NavBar";
 import Card from "../../components/Card";
-import "./Work.css";
+import "./Work.scss";
 import CardTitle from "../../components/CardTitle";
 import ActionButton from "../../components/ActionButton";
 import Footer from "../../layout/Footer";
 import SideNav from "../../layout/SideNav";
 import workList from "../../data/workList";
-import { motion, useAnimation, useInView } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useAnimation,
+  useInView,
+} from "framer-motion";
+import Preloader from "../../components/Preloader";
+import Magnetic from "../../components/Magnetic";
 
 const Work = () => {
+  const [isloading, setIsLoading] = useState(true);
+  const [workFilter, setWorkFilter] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const animationControls = useAnimation();
@@ -24,8 +33,17 @@ const Work = () => {
     }
   }, [isInView]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <>
+      <AnimatePresence mode="wait">
+        {isloading && <Preloader page="Work" />}
+      </AnimatePresence>
       <SideNav />
       <NavBar />
       <section className="work-intro" ref={ref}>
@@ -35,7 +53,7 @@ const Work = () => {
               <motion.span
                 initial={{ opacity: 0, y: 100 }}
                 animate={animationControls}
-                transition={{ duration: 0.5, delay: 0.25 * index }}
+                transition={{ duration: 0.5, delay: 2.4 + index / 6 }}
                 key={index}
               >
                 {word}
@@ -53,26 +71,79 @@ const Work = () => {
         }}
         initial="hidden"
         animate={animationControls}
-        transition={{ duration: 0.5, delay: 1.8 }}
+        transition={{ duration: 0.5, delay: 3.4 }}
       >
-        <p>All</p>
-        <p>Design</p>
-        <p>Development</p>
-        <p>Scripts</p>
+        <p
+          style={{
+            color: `${workFilter == false ? "#ff1414ea" : "black"}`,
+          }}
+          onClick={() => setWorkFilter(false)}
+        >
+          All
+        </p>
+        <p
+          style={{
+            color: `${workFilter == "Design" ? "#ff1414ea" : "black"}`,
+          }}
+          onClick={() => setWorkFilter("Design")}
+        >
+          Design
+        </p>
+        <p
+          style={{
+            color: `${workFilter == "Development" ? "#ff1414ea" : "black"}`,
+          }}
+          onClick={() => setWorkFilter("Development")}
+        >
+          Development
+        </p>
+        <p
+          style={{
+            color: `${workFilter == "Script" ? "#ff1414ea" : "black"}`,
+          }}
+          onClick={() => setWorkFilter("Script")}
+        >
+          Scripts
+        </p>
       </motion.div>
       <section className="project-section">
-        {workList.map((work) => (
-          <div className="card-group" key={work.id}>
-            <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
-            <CardTitle name={work.title} workType={work.workType} />
-          </div>
-        ))}
-        <ActionButton
-          bgcolor="rgb(69,92,233)"
-          color="white"
-          value="View More"
-        />
+        {!workFilter
+          ? workList
+              .filter((work) => {
+                return work.id <= 6;
+              })
+              .map((work) => (
+                <motion.div className="card-group" key={work.id}>
+                  <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
+                  <CardTitle name={work.title} workType={work.workType} />
+                </motion.div>
+              ))
+          : workList
+              .filter((work) => {
+                return work.id <= 6 && work.workType.includes(workFilter);
+              })
+              .map((work) => (
+                <motion.div className="card-group" key={work.id}>
+                  <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
+                  <CardTitle name={work.title} workType={work.workType} />
+                </motion.div>
+              ))}
       </section>
+      <div
+        style={{
+          margin: "2rem 0 4rem 0",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Magnetic>
+          <ActionButton
+            bgcolor="rgba(0, 0, 0, 0.9)"
+            color="rgba(255, 255, 255, .8)"
+            value="View More"
+          />
+        </Magnetic>
+      </div>
       <Footer />
     </>
   );

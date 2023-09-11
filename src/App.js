@@ -3,15 +3,25 @@ import Home from "./Pages/Home/Home";
 import Work from "./Pages/Works/Work";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import { useState } from "react";
+import { AsideContext } from "./context/AsideContext";
 
 function App() {
+  const [toggled, setTuggled] = useState(true);
+
+  const handleToggle = () => {
+    setTuggled(!toggled);
+  };
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/work" element={<Work />}></Route>
-      <Route path="/about" element={<About />}></Route>
-      <Route path="/contact" element={<Contact />}></Route>
-    </Routes>
+    <AsideContext.Provider value={{ toggled, handleToggle }}>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/work" element={<Work />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
+    </AsideContext.Provider>
   );
 }
 

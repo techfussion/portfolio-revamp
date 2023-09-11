@@ -1,69 +1,48 @@
-import React, { useState, useRef, useEffect } from "react";
-import HashLoader from "react-spinners/HashLoader";
-import { styled } from "styled-components";
+import React from "react";
+import BounceLoader from "react-spinners/BounceLoader";
+import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #1f1e1e;
-  width: 100vw;
-  height: 100vh;
-`;
+const styles = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "#495057",
+  position: "fixed",
+  width: "100%",
+  height: "100%",
+  zIndex: "2000",
+};
 
-const PreLoader = () => {
-  const [preloader, setPreloader] = useState(false);
-  const [timer, setTimer] = useState(0);
-  const [currentpreloaderColor, setCurrentPreloaderColor] = useState("#8c8e91");
+const pStyle = {
+  color: "rgba(255, 255, 255, 1)",
+  position: "absolute",
+  left: "2vw",
+  bottom: "1vw",
+  fontSize: "2.2vw",
+};
 
-  const preloaderColorArray = ["#0515f7", "#f705bf", "#428af591", "#f5a742"];
+const slideUp = {
+  initial: {
+    y: "0",
+  },
+  exit: {
+    y: "-100vh",
+    transition: { duration: 0.4, ease: [0.66, 0, 0.14, 0.7] },
+  },
+};
 
-  let id = useRef(null);
-
-  const clear = () => {
-    setPreloader(false);
-    clearInterval(id.current);
-  };
-
-  const randomIndex = Math.floor(Math.random() * preloaderColorArray.length);
-
-  id.current = window.setInterval(() => {
-    setTimer((timer) => timer + 1);
-    setCurrentPreloaderColor(preloaderColorArray[randomIndex]);
-
-    if (timer < 7) {
-    } else if (document.readyState === "complete") {
-      clear();
-    } else {
-      // You should toast the visitor about slow network here
-      // Wait two seconds and display page regardless
-      setTimeout(() => {
-        clear();
-      }, 2000);
-    }
-  }, 1000);
-
-  useEffect(() => {
-    setPreloader(true);
-  }, []);
+const Preloader = (props) => {
   return (
-    <>
-      {preloader ? (
-        <Wrapper>
-          <HashLoader
-            color={currentpreloaderColor}
-            loading={preloader}
-            size={100}
-            aria-label="Loading Spinner"
-            data-testid="preloader"
-          />
-        </Wrapper>
-      ) : (
-        <></>
-      )}
-    </>
+    <motion.div variants={slideUp} initial="initial" exit="exit" style={styles}>
+      <BounceLoader
+        color="#fff"
+        size={100}
+        aria-label="Loading Spinner"
+        data-testid="preloader"
+      />
+      <p style={pStyle}>{props.page}...</p>
+    </motion.div>
   );
 };
 
-export default PreLoader;
+export default Preloader;

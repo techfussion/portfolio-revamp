@@ -1,0 +1,115 @@
+.intro-viewport {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > h1 {
+    max-width: 55%;
+    font-size: 6vw;
+    letter-spacing: 0.6vw;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.65);
+
+    > span {
+      display: inline-block;
+      padding-right: 2vw;
+    }
+  }
+  @media (max-width: 425px) {
+    > h1 {
+      max-width: 75%;
+      font-size: 9vw;
+    }
+  }
+}
+
+.about-section {
+  margin: 8vw;
+  display: flex;
+  justify-content: space-between;
+
+  > .about {
+    margin-top: 1vw;
+    line-height: 1.8vw;
+    max-width: 25%;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 1.3vw;
+
+    > span {
+      display: inline-block;
+      padding-right: 0.8vw;
+    }
+  }
+
+  > .about-image {
+    width: 55vw;
+    filter: grayscale(100%);
+    transition-duration: 1s;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+
+    > .about {
+      font-size: 2.3vw;
+      line-height: 2.8vw;
+      max-width: 100%;
+
+      > span {
+        padding-right: 1.2vw;
+      }
+    }
+
+    > .about-image {
+      width: 100%;
+      margin-top: 4vw;
+    }
+  }
+}
+
+.services {
+  background-color: rgba(240, 248, 255, 0.87);
+  padding: 2.5vw 6vw;
+
+  > h2 {
+    font-size: 2.7vw;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 4vw;
+  }
+
+  > .service-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 425px) {
+    > h2 {
+      font-size: 5vw;
+    }
+
+    > .service-group {
+      flex-direction: column;
+    }
+  }
+}
+
+.reviews {
+  > h2 {
+    font-size: 2.5vw;
+    color: rgba(0, 0, 0, 0.75);
+    margin: 4vw 0 2vw 6vw;
+  }
+
+  @media (max-width: 425px) {
+    > h2 {
+      font-size: 4.5vw;
+    }
+  }
+}

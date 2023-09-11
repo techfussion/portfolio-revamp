@@ -1,61 +1,61 @@
 import { React, useEffect, useRef } from "react";
 import { styled } from "styled-components";
-import { useAnimation, motion, useInView } from "framer-motion";
 
 const StyledDiv = styled.div`
   width: 30%;
 
   > .service-id {
-    font-size: 0.8rem;
+    font-size: 1.1vw;
     color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.7vw;
   }
 
   > hr {
     border: none;
-    height: 1px;
+    height: 0.1vw;
     background-color: rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
+    margin-bottom: 2.2vw;
   }
 
   > .service-name {
-    margin-bottom: 2rem;
+    margin-bottom: 2.2vw;
     color: rgba(0, 0, 0, 0.8);
+    font-size: 1.7vw;
   }
 
   > .service-description {
-    line-height: 1.35em;
-    margin-bottom: 5rem;
+    line-height: 1.5vw;
+    margin-bottom: 5vw;
+    font-size: 1.2vw;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+
+    > .service-id {
+      font-size: 2.2vw;
+      margin-bottom: 2.1vw;
+    }
+
+    > .service-name {
+      margin-bottom: 3vw;
+      font-size: 3vw;
+    }
+
+    > .service-description {
+      line-height: 3.5vw;
+      margin-border: 8vw;
+      font-size: 2.5vw;
+    }
   }
 `;
 
 const Service = (props) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const animationControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      animationControls.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, delay: 0.25 },
-      });
-    }
-  }, [isInView]);
-
   return (
     <StyledDiv>
-      <motion.div
-        ref={ref}
-        className="service-id"
-        initial={{ opacity: 0, y: 100 }}
-        animate={animationControls}
-      >
-        <p className="service-id">{props.num}</p>
-        <hr />
-        <h3 className="service-name">{props.service}</h3>
-      </motion.div>
+      <p className="service-id">{props.num}</p>
+      <hr />
+      <h3 className="service-name">{props.service}</h3>
       <p className="service-description">{props.description}</p>
     </StyledDiv>
   );

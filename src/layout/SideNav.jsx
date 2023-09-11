@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { IoArrowBack } from "react-icons/io5";
 import BaseFooter from "./BaseFooter";
+import { AnimatePresence } from "framer-motion";
+import { AsideContext } from "../context/AsideContext";
 
 const StyledAside = styled.aside`
   height: 100vh;
@@ -11,7 +13,7 @@ const StyledAside = styled.aside`
   right: 0;
   background-color: #000;
   z-index: 1;
-  display: none;
+  display: ${(props) => (props.toggled ? "none" : "block")};
 
   > h1 {
     font-size: 2.5rem;
@@ -54,37 +56,46 @@ const StyledAside = styled.aside`
 `;
 
 const SideNav = () => {
+  const toggled = useContext(AsideContext);
+
   return (
-    <StyledAside>
-      <h1>Navigations</h1>
-      <hr />
-      <div className="aside-styling-circle">
-        <IoArrowBack size={24} />
-      </div>
-      <ul>
-        <li>
-          <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/"}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/work"}>
-            Work
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/about"}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/contact"}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-      <BaseFooter />
-    </StyledAside>
+    <AnimatePresence>
+      {toggled && (
+        <StyledAside toggled={toggled}>
+          <h1>Navigations</h1>
+          <hr />
+          <div className="aside-styling-circle">
+            <IoArrowBack size={24} />
+          </div>
+          <ul>
+            <li>
+              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/"}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/work"}>
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/about"}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "rgba(255, 255, 255, 0.8)" }}
+                to={"/contact"}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <BaseFooter />
+        </StyledAside>
+      )}
+    </AnimatePresence>
   );
 };
 

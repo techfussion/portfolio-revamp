@@ -2,17 +2,22 @@ import { React, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-// import imageLoaded from "../utils/verifyImgLoaded";
-// import HashLoader from "react-spinners/HashLoader";
+import hoverIcon from "../assets/img/hoverImg.png";
 
 const StyledDiv = styled.div`
   max-width: 100%;
-  padding: 7rem 2.3rem;
-  margin-bottom: 2.5rem;
+  padding: 7vw 2.3vw;
+  margin-bottom: 2.5vw;
   background-color: ${(props) => props.bgcolor};
+  cursor: url("https://github.com/techfussion/placeholder/blob/main/hoverImg.png"),
+    pointer;
 
   > img {
     max-width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 5vw;
   }
 `;
 
@@ -36,7 +41,7 @@ const Card = (props) => {
       }}
       initial="hidden"
       animate={animationControls}
-      transition={{ duration: 1, delay: 0.2 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
     >
       <StyledDiv bgcolor={props.bgcolor}>
         <img

@@ -1,0 +1,109 @@
+.contact-intro {
+  > .leaflet-container {
+    height: 60vh;
+    width: 80vw;
+  }
+
+  > h1 {
+    position: absolute;
+    right: 2vw;
+    top: 15vh;
+    z-index: 1000;
+    font-size: 5vw;
+    letter-spacing: 0.9vw;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.6);
+
+    > span {
+      display: block;
+    }
+  }
+
+  @media (max-width: 425px) {
+    > h1 {
+      top: 24vh;
+      font-size: 8vw;
+    }
+  }
+}
+
+.contact-form-section {
+  margin: 5vh 0;
+  padding: 0 6vw;
+  display: flex;
+  justify-content: space-between;
+
+  > .work-toast-msg {
+    width: 25%;
+    margin-top: 3vw;
+
+    > span {
+      display: inline-block;
+      padding-right: 0.4vw;
+      font-size: 1.5vw;
+      line-height: 2.8vw;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  > form {
+    width: 70%;
+    > label {
+      display: block;
+      font-size: 1.6vw;
+
+      > span {
+        color: rgb(248, 94, 94);
+        padding-top: 0.8vw;
+      }
+
+      > input,
+      textarea {
+        border: none;
+        border-bottom: 0.1vw solid rgba(0, 0, 0, 0.4);
+        width: 94%;
+        height: 2vw;
+        margin: 2vw 0 6vw 0;
+        outline: none;
+        font-size: 1.5vw;
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+    > .contact-button {
+      margin-left: 15%;
+    }
+  }
+  @media (max-width: 425px) {
+    flex-direction: column;
+
+    > .work-toast-msg {
+      width: 100%;
+      margin-bottom: 8vw;
+
+      > span {
+        font-size: 3vw;
+        padding-right: 0.8vw;
+        letter-spacing: 0.5vw;
+      }
+    }
+
+    > form {
+      width: 100%;
+
+      > label {
+        font-size: 2.4vw;
+
+        > input,
+        textarea {
+          border-bottom: 0.1vw solid rgba(0, 0, 0, 0.2);
+          height: 5vw;
+          font-size: 2.4vw;
+        }
+      }
+      > .contact-button {
+        margin-left: 35%;
+      }
+    }
+  }
+}

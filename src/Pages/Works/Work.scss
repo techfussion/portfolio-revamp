@@ -1,0 +1,68 @@
+.work-intro {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > h1 {
+    max-width: 60%;
+    font-size: 6.5vw;
+    letter-spacing: 0.6vw;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.65);
+
+    > span {
+      display: inline-block;
+      padding-right: 2vw;
+    }
+  }
+
+  @media (max-width: 425px) {
+    > h1 {
+      font-size: 9vw;
+      max-width: 80%;
+      letter-spacing: 1vw;
+      line-height: 12vw;
+    }
+  }
+}
+
+.toggle-work-type {
+  display: flex;
+  flex-direction: row;
+  margin: 3vw 0 1vw 6vw;
+
+  > p {
+    padding-right: 1.1vw;
+    font-size: 1.1vw;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition-duration: 0.5s;
+    }
+  }
+  @media (max-width: 425px) {
+    > p {
+      font-size: 2.2vw;
+      padding-right: 1.6vw;
+    }
+  }
+}
+
+.project-section {
+  padding: 0 6vw;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+
+  > .card-group {
+    max-width: 45%;
+  }
+
+  @media (max-width: 600px) {
+    .card-group {
+      max-width: 100%;
+    }
+  }
+}

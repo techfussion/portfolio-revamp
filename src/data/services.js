@@ -9,31 +9,31 @@ const servicesData = [
     id: "02",
     service: "Development",
     description:
-      "I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction. For content management I use Kirby CMS.",
+      "With a versatile skill set and a commitment to excellence, I specialize in crafting scalable websites from the ground up, ensuring they seamlessly align with the overall design vision. My holistic approach spans diverse fields to drive success",
   },
   {
     id: "03",
-    service: "Everything in full",
+    service: "Full stack",
     description:
-      "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+      "Offering end-to-end website development services is my forte. My unique blend of design expertise and strong development skills enables me to bring your projects to life with excellence and precision.",
   },
   {
     id: "04",
     service: "Mentorship",
     description:
-      "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+      "Through my mentorship, I empower individuals to navigate their unique paths to growth and success. I strongly advocate that impactful mentorship serves as the bedrock for meaningful and fulfilling journeys.",
   },
   {
     id: "05",
-    service: "Coding",
+    service: "Programming",
     description:
-      "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+      "Unlock the power of custom programming solutions tailored to your unique needs. I deliver efficient, reliable, and scalable software applications that drive your business forward.",
   },
   {
     id: "06",
     service: "Others",
     description:
-      "A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.",
+      "With a versatile skill set and a commitment to excellence, I excel in various domains, consistently delivering exceptional results. Feel free to contact for any service you hope to get.",
   },
 ];
 
