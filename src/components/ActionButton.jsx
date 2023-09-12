@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { styled } from "styled-components";
 
 const StyledButton = styled.button`
@@ -6,7 +6,7 @@ const StyledButton = styled.button`
   color: ${(props) => (props.color ? props.color : "#fff")};
   border: 1px solid ${(props) => props.color};
   padding: 2.7vh 2.7vw;
-  border-radius: 
+  border-radius: ${(props) => (props.rad ? props.rad : "2vw")};
   margin: 0 auto 0 auto;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.2vw;
@@ -16,15 +16,15 @@ const StyledButton = styled.button`
     background-color: rgb(69, 92, 233);
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     border-radius: ${(props) => (props.rad ? props.rad : "3vw")};
   }
-  
-  @media (min-width: 425px){
+
+  @media (max-width: 425px) {
     border-radius: ${(props) => (props.rad ? props.rad : "4.4vw")};
     padding: 2.7vh 4.5vw;
     font-size: 2vw;
-    letter-spacing: .4vw;
+    letter-spacing: 0.4vw;
   }
 `;
 

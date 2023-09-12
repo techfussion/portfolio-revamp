@@ -161,7 +161,7 @@ const Home = () => {
               <ActionButton
                 bgcolor="rgba(0, 0, 0, 0.9)"
                 color="rgba(255, 255, 255, .8)"
-                value="Work"
+                value="Works"
               />
             </Link>
           </Magnetic>

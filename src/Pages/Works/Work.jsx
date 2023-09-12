@@ -15,6 +15,8 @@ import {
 } from "framer-motion";
 import Preloader from "../../components/Preloader";
 import Magnetic from "../../components/Magnetic";
+import { Link } from "react-router-dom";
+import { scrollToTop } from "../../utils/scrollToTop";
 
 const Work = () => {
   const [isloading, setIsLoading] = useState(true);
@@ -129,6 +131,84 @@ const Work = () => {
                 </motion.div>
               ))}
       </section>
+      <section className="personal-project-section">
+        <h2>Personal Projects</h2>
+        <motion.div
+          ref={ref}
+          className="toggle-work-type"
+          variants={{
+            hidden: { opacity: 0, y: 100 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate={animationControls}
+          transition={{ duration: 0.5, delay: 3.4 }}
+        >
+          <p
+            style={{
+              color: `${workFilter == false ? "#ff1414ea" : "black"}`,
+            }}
+            onClick={() => setWorkFilter(false)}
+          >
+            All
+          </p>
+          <p
+            style={{
+              color: `${workFilter == "Design" ? "#ff1414ea" : "black"}`,
+            }}
+            onClick={() => setWorkFilter("Design")}
+          >
+            Front-End
+          </p>
+          <p
+            style={{
+              color: `${workFilter == "Development" ? "#ff1414ea" : "black"}`,
+            }}
+            onClick={() => setWorkFilter("Development")}
+          >
+            Back-End
+          </p>
+          <p
+            style={{
+              color: `${workFilter == "Script" ? "#ff1414ea" : "black"}`,
+            }}
+            onClick={() => setWorkFilter("Script")}
+          >
+            Full-Stack
+          </p>
+          <p
+            style={{
+              color: `${workFilter == "Script" ? "#ff1414ea" : "black"}`,
+            }}
+            // onClick={() => setWorkFilter("Script")}
+          >
+            Others
+          </p>
+        </motion.div>
+        <div className="project-section">
+          {!workFilter
+            ? workList
+                .filter((work) => {
+                  return work.id <= 6;
+                })
+                .map((work) => (
+                  <motion.div className="card-group" key={work.id}>
+                    <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
+                    <CardTitle name={work.title} workType={work.workType} />
+                  </motion.div>
+                ))
+            : workList
+                .filter((work) => {
+                  return work.id <= 6 && work.workType.includes(workFilter);
+                })
+                .map((work) => (
+                  <motion.div className="card-group" key={work.id}>
+                    <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
+                    <CardTitle name={work.title} workType={work.workType} />
+                  </motion.div>
+                ))}
+        </div>
+      </section>
       <div
         style={{
           margin: "2rem 0 4rem 0",
@@ -137,11 +217,13 @@ const Work = () => {
         }}
       >
         <Magnetic>
-          <ActionButton
-            bgcolor="rgba(0, 0, 0, 0.9)"
-            color="rgba(255, 255, 255, .8)"
-            value="View More"
-          />
+          <Link to={"/contact"} onClick={scrollToTop}>
+            <ActionButton
+              bgcolor="rgba(0, 0, 0, 0.9)"
+              color="rgba(255, 255, 255, .8)"
+              value="Hire"
+            />
+          </Link>
         </Magnetic>
       </div>
       <Footer />

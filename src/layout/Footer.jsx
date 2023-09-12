@@ -8,7 +8,6 @@ import { scrollToTop } from "../utils/scrollToTop";
 
 const StyledFooter = styled.footer`
   height: 100vh;
-  margin-top: 2.2vw;
   position: relative;
   background-color: black;
 
@@ -17,8 +16,9 @@ const StyledFooter = styled.footer`
     justify-content: center;
     height: 100%;
     align-items: center;
+
     > .footer-elements {
-      margin: 0 12vw;
+      margin: 0 12vw 5vw;
       display: inline-block;
 
       > h1 {
@@ -89,7 +89,9 @@ const Footer = () => {
           </div>
           <div className="element">
             <Magnetic>
-              <p>+2349069209111</p>
+              <p>
+                <a href="tel:+2349069209111">+2349069209111</a>
+              </p>
             </Magnetic>
           </div>
           <div className="footer-contact-button">

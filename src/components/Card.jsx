@@ -2,7 +2,7 @@ import { React, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-import hoverIcon from "../assets/img/hoverImg.png";
+// import hoverIcon from "../assets/img/hoverImg.png";
 
 const StyledDiv = styled.div`
   max-width: 100%;
@@ -46,7 +46,7 @@ const Card = (props) => {
       <StyledDiv bgcolor={props.bgcolor}>
         <img
           alt=""
-          src={require(`../assets/img/${props.imgName}`)}
+          src={require(`../assets/img/works/${props.imgName}`)}
           id={props.imgName}
         />
       </StyledDiv>

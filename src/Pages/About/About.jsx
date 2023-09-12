@@ -86,7 +86,7 @@ const About = () => {
             animate={animationControls}
             transition={{ duration: 0.5, delay: 3.5 }}
             className="about-image"
-            src={require("../../assets/img/works/Damn.png")}
+            src={require("../../assets/img/about/Damn.png")}
             alt=""
           />
         </section>
