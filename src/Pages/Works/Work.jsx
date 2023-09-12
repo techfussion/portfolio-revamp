@@ -133,17 +133,7 @@ const Work = () => {
       </section>
       <section className="personal-project-section">
         <h2>Personal Projects</h2>
-        <motion.div
-          ref={ref}
-          className="toggle-work-type"
-          variants={{
-            hidden: { opacity: 0, y: 100 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate={animationControls}
-          transition={{ duration: 0.5, delay: 3.4 }}
-        >
+        <div className="toggle-work-type">
           <p
             style={{
               color: `${workFilter == false ? "#ff1414ea" : "black"}`,
@@ -184,7 +174,7 @@ const Work = () => {
           >
             Others
           </p>
-        </motion.div>
+        </div>
         <div className="project-section">
           {!workFilter
             ? workList
