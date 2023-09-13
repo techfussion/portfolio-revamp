@@ -68,7 +68,12 @@ const CardTitle = (props) => {
         <div className="work-type-group">
           <p>{props.workType}</p>
           <p>
-            <a href={props.url} alt="" target="_blank">
+            <a
+              href={props.url}
+              alt=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               live-site
             </a>
           </p>

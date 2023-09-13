@@ -82,7 +82,7 @@ const Home = () => {
                   >
                     <ActionButton
                       value="GitHub"
-                      bgcolor="rgba(0, 0, 0, 0.8)"
+                      bgcolor="#495057"
                       color="rgba(255, 255, 255, 0.8)"
                     />
                   </Link>
@@ -100,7 +100,7 @@ const Home = () => {
                   >
                     <ActionButton
                       value="LinkedIn"
-                      bgcolor="rgba(0, 0, 0, 0.8)"
+                      bgcolor="#495057"
                       color="rgba(255, 255, 255, 0.8)"
                     />
                   </Link>
@@ -127,7 +127,7 @@ const Home = () => {
             <Magnetic>
               <Link to={"/about"} onClick={scrollToTop}>
                 <ActionButton
-                  bgcolor="rgba(0, 0, 0, 0.9)"
+                  bgcolor="#495057"
                   color="rgba(255, 255, 255, .8)"
                   value="About"
                 />
@@ -167,7 +167,7 @@ const Home = () => {
           <Magnetic>
             <Link to={"/work"} onClick={scrollToTop}>
               <ActionButton
-                bgcolor="rgba(0, 0, 0, 0.9)"
+                bgcolor="#495057"
                 color="rgba(255, 255, 255, .8)"
                 value="Works"
               />

@@ -225,7 +225,7 @@ const Work = () => {
         <Magnetic>
           <Link to={"/contact"} onClick={scrollToTop}>
             <ActionButton
-              bgcolor="rgba(0, 0, 0, 0.9)"
+              bgcolor="#495057"
               color="rgba(255, 255, 255, .8)"
               value="Hire"
             />

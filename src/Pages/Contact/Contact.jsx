@@ -191,7 +191,7 @@ const Contact = () => {
               <ActionButton
                 type="submit"
                 value="Send Message"
-                bgcolor="rgb(0,0,0,.9)"
+                bgcolor="#495057"
                 color="rgba(255, 255, 255, .6)"
                 isDisabled={buttonDisabled}
               />

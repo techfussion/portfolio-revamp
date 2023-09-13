@@ -54,7 +54,7 @@ const StyledNav = styled.nav`
 
 const StyledDiv = styled.div`
   max-width: max-content;
-  background-color: rgba(0, 0, 0, 0.76);
+  background-color: #495057;
   padding: 1.5vw;
   position: fixed;
   right: 1vw;

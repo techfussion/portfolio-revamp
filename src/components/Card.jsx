@@ -50,7 +50,7 @@ const Card = (props) => {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <StyledDiv bgcolor={props.bgcolor}>
-        <Link to={props.url} target="_blank">
+        <Link to={props.url} target="_blank" rel="noopener noreferrer">
           <img
             alt=""
             src={require(`../assets/img/works/${props.imgName}`)}
