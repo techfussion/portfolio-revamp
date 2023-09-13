@@ -9,7 +9,7 @@ import { scrollToTop } from "../utils/scrollToTop";
 const StyledFooter = styled.footer`
   height: 100vh;
   position: relative;
-  background-color: black;
+  background-color: #495057;
 
   > .footer-group {
     display: flex;
@@ -55,13 +55,14 @@ const StyledFooter = styled.footer`
   @media (max-width: 425px) {
     > .footer-group {
       > .footer-elements {
+        margin: 0;
         > h1 {
-          font-size: 7vw;
+          font-size: 11vw;
         }
 
         > .element {
           p {
-            font-size: 2.2vw;
+            font-size: 2.5vw;
           }
         }
 
@@ -98,7 +99,7 @@ const Footer = () => {
             <Magnetic>
               <Link to={"/contact"} onClick={scrollToTop}>
                 <ActionButton
-                  bgcolor="rgba(0, 0, 0, 0.9)"
+                  bgcolor="transparent"
                   color="rgba(255, 255, 255, .4)"
                   value="Contact"
                 />

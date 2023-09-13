@@ -1,99 +1,166 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-import { IoArrowBack } from "react-icons/io5";
 import BaseFooter from "./BaseFooter";
 import { AnimatePresence } from "framer-motion";
 import { AsideContext } from "../context/AsideContext";
+import { scrollToTop } from "../utils/scrollToTop";
+import Magnetic from "../components/Magnetic";
+import { VscClose } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
 const StyledAside = styled.aside`
   height: 100vh;
-  width: 35%;
+  width: 40%;
   position: fixed;
   right: 0;
-  background-color: #000;
-  z-index: 1;
-  display: ${(props) => (props.toggled ? "none" : "block")};
+  background-color: #495057;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1001;
 
-  > h1 {
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 3rem 0 4rem 1.3rem;
-    font-family: "Barlow Condensed", sans-serif;
-  }
+  > div {
+    float: right;
 
-  > hr {
-    width: 60%;
-    border: none;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin-bottom: 4rem;
-  }
+    > .close-menu {
+      color: rgba(255, 255, 255, 0.4);
+      padding: 1.6vw;
+      border: 0.1vw solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      margin: 2vw 2vw 0 0;
+      cursor: pointer;
 
-  > .aside-styling-circle {
-    padding: 2.3rem;
-    color: rgba(255, 255, 255, 0.7);
-    transform: rotate(-60deg);
-    top: 3rem;
-    right: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    position: absolute;
+      &:hover {
+        background-color: rgb(69, 92, 233);
+        border: none;
+      }
+    }
   }
 
   > ul {
-    padding-left: 0;
+    padding: 0;
     width: max-content;
     margin-left: auto;
     margin-right: auto;
+    clear: both;
 
     > li {
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      letter-spacing: 7px;
+      margin-bottom: 2vw;
+      font-size: 2vw;
+      letter-spacing: 0.7vw;
+    }
+  }
+
+  @media (max-width: 425px) {
+    width: 60%;
+
+    > ul {
+      > li {
+        font-size: 4vw;
+        margin-bottom: 4vw;
+      }
     }
   }
 `;
 
 const SideNav = () => {
-  const toggled = useContext(AsideContext);
+  const { toggled, handleToggle } = useContext(AsideContext);
+
+  const handleClick = () => {
+    scrollToTop();
+    handleToggle();
+  };
 
   return (
     <AnimatePresence>
       {toggled && (
-        <StyledAside toggled={toggled}>
-          <h1>Navigations</h1>
-          <hr />
-          <div className="aside-styling-circle">
-            <IoArrowBack size={24} />
-          </div>
-          <ul>
-            <li>
-              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/"}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/work"}>
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link style={{ color: "rgba(255, 255, 255, 0.8)" }} to={"/about"}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                style={{ color: "rgba(255, 255, 255, 0.8)" }}
-                to={"/contact"}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-          <BaseFooter />
-        </StyledAside>
+        <motion.div>
+          <StyledAside>
+            <Magnetic>
+              <div className="close-menu" onClick={handleToggle}>
+                <Magnetic>
+                  <VscClose size={24} />
+                </Magnetic>
+              </div>
+            </Magnetic>
+            <ul>
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{
+                      color: "rgba(255, 255, 255, 0.6)",
+                    }}
+                    to={"/"}
+                    onClick={handleClick}
+                  >
+                    Home
+                  </Link>
+                </Magnetic>
+              </li>
+
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{ color: "rgba(255, 255, 255, 0.6)" }}
+                    to={"/work"}
+                    onClick={handleClick}
+                  >
+                    Work
+                  </Link>
+                </Magnetic>
+              </li>
+
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{ color: "rgba(255, 255, 255, 0.6)" }}
+                    to={"/about"}
+                    onClick={handleClick}
+                  >
+                    About
+                  </Link>
+                </Magnetic>
+              </li>
+
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{ color: "rgba(255, 255, 255, 0.6)" }}
+                    to={"/contact"}
+                    onClick={handleClick}
+                  >
+                    Contact
+                  </Link>
+                </Magnetic>
+              </li>
+
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{ color: "rgba(255, 255, 255, 0.6)" }}
+                    to={"https://github.com/techfussion"}
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    GitHub
+                  </Link>
+                </Magnetic>
+              </li>
+              <li>
+                <Magnetic>
+                  <Link
+                    style={{ color: "rgba(255, 255, 255, 0.6)" }}
+                    to={"https://linkedin.com/in/raji-abdulmumin-728377279"}
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    LinkedIn
+                  </Link>
+                </Magnetic>
+              </li>
+            </ul>
+            <BaseFooter />
+          </StyledAside>
+        </motion.div>
       )}
     </AnimatePresence>
   );

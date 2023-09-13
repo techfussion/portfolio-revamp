@@ -7,7 +7,7 @@ const StyledDiv = styled.div`
   bottom: 0;
   width: 100%;
   max-width: 100%;
-  background-color: black;
+  background-color: #495057;
 
   > .base-wrapper {
     display: flex;
@@ -67,11 +67,11 @@ const StyledDiv = styled.div`
           margin-left: 2.3vw;
 
           > .base-description {
-            font-size: 2vw;
+            font-size: 2.3vw;
           }
 
           > .base-value {
-            font-size: 2.3vw;
+            font-size: 2.5vw;
           }
         }
       }
@@ -79,7 +79,6 @@ const StyledDiv = styled.div`
 
     > .copyright {
       font-size: 2.2vw;
-      margin-bottom: 0.6vw;
     }
   }
 `;

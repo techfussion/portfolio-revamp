@@ -1,6 +1,7 @@
 import { React, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // import hoverIcon from "../assets/img/hoverImg.png";
 
@@ -11,8 +12,13 @@ const StyledDiv = styled.div`
   background-color: ${(props) => props.bgcolor};
   cursor: url("https://github.com/techfussion/placeholder/blob/main/hoverImg.png"),
     pointer;
+  transition: transform 1s ease-in-out;
 
-  > img {
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
     max-width: 100%;
   }
 
@@ -44,11 +50,13 @@ const Card = (props) => {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <StyledDiv bgcolor={props.bgcolor}>
-        <img
-          alt=""
-          src={require(`../assets/img/works/${props.imgName}`)}
-          id={props.imgName}
-        />
+        <Link to={props.url} target="_blank">
+          <img
+            alt=""
+            src={require(`../assets/img/works/${props.imgName}`)}
+            id={props.imgName}
+          />
+        </Link>
       </StyledDiv>
     </motion.div>
   );

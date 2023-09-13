@@ -43,11 +43,11 @@ const StyledDiv = styled.div`
 
   @media (max-width: 425px) {
     > .review {
-      font-size: 2.5vw;
+      font-size: 3vw;
     }
 
     > .service {
-      font-size: 2.5vw;
+      font-size: 2.8vw;
     }
 
     > div {
@@ -60,11 +60,11 @@ const StyledDiv = styled.div`
 
         > p {
           margin-top: 0.6vw;
-          font-size: 2.2vw;
+          font-size: 2.7vw;
         }
 
         > .org {
-          font-size: 2.2vw;
+          font-size: 2.6vw;
         }
       }
     }

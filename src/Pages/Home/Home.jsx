@@ -144,8 +144,16 @@ const Home = () => {
             })
             .map((work) => (
               <div className="card-group" key={work.id}>
-                <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
-                <CardTitle name={work.title} workType={work.workType} />
+                <Card
+                  imgName={work.imgUri}
+                  bgcolor={work.bgcolor}
+                  url={work.url}
+                />
+                <CardTitle
+                  name={work.title}
+                  workType={work.workType}
+                  url={work.url}
+                />
               </div>
             ))}
         </section>

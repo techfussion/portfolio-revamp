@@ -7,7 +7,7 @@ import { useState } from "react";
 import { AsideContext } from "./context/AsideContext";
 
 function App() {
-  const [toggled, setTuggled] = useState(true);
+  const [toggled, setTuggled] = useState(false);
 
   const handleToggle = () => {
     setTuggled(!toggled);

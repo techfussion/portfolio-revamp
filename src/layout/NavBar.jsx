@@ -17,13 +17,13 @@ const StyledNav = styled.nav`
   > p {
     font-size: 1.25vw;
 
-    @media (width: 425px) {
+    @media (max-width: 425px) {
       margin-top: 4vw;
-      font-size: 2.5vw;
+      font-size: 3.5vw;
     }
     @media (max-width: 375px) {
       margin-top: 5vw;
-      font-size: 2.5vw;
+      font-size: 3.5vw;
     }
   }
   > ul {
@@ -36,14 +36,13 @@ const StyledNav = styled.nav`
         font-size: 1.25vw;
 
         @media (max-width: 425px) {
-          font-size: 1.5vw;
           display: none;
         }
       }
 
       > .mobile-menu {
         display: none;
-        font-size: 2.5vw;
+        font-size: 3.5vw;
 
         @media (max-width: 425px) {
           display: block;
@@ -69,16 +68,18 @@ const StyledDiv = styled.div`
 
   &:hover {
     background-color: rgb(69, 92, 233);
+    border: none;
   }
 
   @media (max-width: 425px) {
-    padding: 3vw;
+    padding: 5vw;
+    right: 4vw;
   }
 `;
 
 const NavBar = (props) => {
   const burger = useRef();
-  const { toggled, handleToggle } = useContext(AsideContext);
+  const { handleToggle } = useContext(AsideContext);
   const [iconSize, setIconSize] = useState(24);
 
   useLayoutEffect(() => {
@@ -116,7 +117,7 @@ const NavBar = (props) => {
     <>
       <StyledNav bgcolor={props.bgcolor}>
         <p>
-          <Link to={"/"}>@Venerable</Link>
+          <Link to={"/"}>@muminraj</Link>
         </p>
         <ul>
           <Magnetic>
@@ -135,14 +136,16 @@ const NavBar = (props) => {
             </li>
           </Magnetic>
           <Magnetic>
-            <li className="mobile-menu">Menu</li>
+            <li className="mobile-menu" onClick={handleToggle}>
+              Menu
+            </li>
           </Magnetic>
         </ul>
       </StyledNav>
 
       <StyledDiv ref={burger} onClick={handleToggle}>
         <Magnetic>
-          {toggled ? <SlMenu size={iconSize} /> : <SlMenu size={iconSize} />}
+          <SlMenu size={iconSize} />
         </Magnetic>
       </StyledDiv>
     </>

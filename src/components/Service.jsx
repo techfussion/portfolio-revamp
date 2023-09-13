@@ -33,19 +33,18 @@ const StyledDiv = styled.div`
     width: 100%;
 
     > .service-id {
-      font-size: 2.2vw;
+      font-size: 2.8vw;
       margin-bottom: 2.1vw;
     }
 
     > .service-name {
       margin-bottom: 3vw;
-      font-size: 3vw;
+      font-size: 4vw;
     }
 
     > .service-description {
       line-height: 3.5vw;
-      margin-border: 8vw;
-      font-size: 2.5vw;
+      font-size: 2.8vw;
     }
   }
 `;

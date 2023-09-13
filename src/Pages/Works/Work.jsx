@@ -116,8 +116,16 @@ const Work = () => {
               })
               .map((work) => (
                 <motion.div className="card-group" key={work.id}>
-                  <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
-                  <CardTitle name={work.title} workType={work.workType} />
+                  <Card
+                    imgName={work.imgUri}
+                    bgcolor={work.bgcolor}
+                    url={work.url}
+                  />
+                  <CardTitle
+                    name={work.title}
+                    workType={work.workType}
+                    url={work.url}
+                  />
                 </motion.div>
               ))
           : workList
@@ -126,12 +134,20 @@ const Work = () => {
               })
               .map((work) => (
                 <motion.div className="card-group" key={work.id}>
-                  <Card imgName={work.imgUri} bgcolor={work.bgcolor} />
-                  <CardTitle name={work.title} workType={work.workType} />
+                  <Card
+                    imgName={work.imgUri}
+                    bgcolor={work.bgcolor}
+                    url={work.url}
+                  />
+                  <CardTitle
+                    name={work.title}
+                    workType={work.workType}
+                    url={work.url}
+                  />
                 </motion.div>
               ))}
       </section>
-      <section className="personal-project-section">
+      {/* <section className="personal-project-section">
         <h2>Personal Projects</h2>
         <div className="toggle-work-type">
           <p
@@ -198,7 +214,7 @@ const Work = () => {
                   </motion.div>
                 ))}
         </div>
-      </section>
+      </section> */}
       <div
         style={{
           margin: "2rem 0 4rem 0",

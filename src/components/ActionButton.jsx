@@ -14,6 +14,7 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: rgb(69, 92, 233);
+    border: none;
   }
 
   @media (max-width: 768px) {
@@ -23,7 +24,8 @@ const StyledButton = styled.button`
   @media (max-width: 425px) {
     border-radius: ${(props) => (props.rad ? props.rad : "4.4vw")};
     padding: 2.7vh 4.5vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
+    border-radius: 6vw;
     letter-spacing: 0.4vw;
   }
 `;

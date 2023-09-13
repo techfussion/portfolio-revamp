@@ -27,14 +27,14 @@ const StyledDiv = styled.div`
 
   @media (max-width: 425px) {
     > h2 {
-      font-size: 3.5vw;
+      font-size: 4vw;
     }
 
     > .work-type-group {
       margin-bottom: 10vw;
 
       > p {
-        font-size: 2.5vw;
+        font-size: 2.8vw;
       }
     }
   }
@@ -68,7 +68,7 @@ const CardTitle = (props) => {
         <div className="work-type-group">
           <p>{props.workType}</p>
           <p>
-            <a href="" alt="">
+            <a href={props.url} alt="" target="_blank">
               live-site
             </a>
           </p>
